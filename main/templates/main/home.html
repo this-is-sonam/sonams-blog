@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sonam's Blog</title>
+
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'main/style.css' %}">
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Hi, this is Sonam 👋</h1>
+    <div class="profile">
+       <img src="{% static 'main/images/profile.jpg' %}">
+
+
+    </div>
+    <p>Welcome to my personal blog</p>
+
+    <div class="links">
+        <a href="https://instagram.com">Instagram</a>
+        <a href="https://youtube.com">YouTube</a>
+        <a href="https://wa.me/919999999999">WhatsApp</a>
+    </div>
+</div>
+<div class="container">
+    <h2>My Blogs</h2>
+
+    {% for blog in blogs %}
+    <a href="/blog/{{ blog.id }}/" style="text-decoration:none; color:inherit;">
+<div class="card">
+
+        <img src="{{ blog.image.url }}">
+        <h3>{{ blog.title }}</h3>
+        <p>{{ blog.content|truncatewords:25 }}</p>
+    </div>
+</a>
+    {% endfor %}
+</div>
+
+
+
+
+   
+
+</body>
+</html>

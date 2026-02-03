@@ -25,7 +25,12 @@ SECRET_KEY = 'django-insecure-@ui1v_25$(i8-bp#rw=h@2on*k6o&rb)4fb$$o&=u52&7v3gmb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "sonams-blog-live.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
+
 
 
 # Application definition
